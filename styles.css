@@ -1,0 +1,77 @@
+
+:root{
+  /* CityLube brand */
+  --bg:#F7F9FC;        /* blanco suave principal */
+  --bg-alt:#ffffff;    /* secciones alternas */
+  --card:#FFFFFF;      /* tarjetas claras para máxima legibilidad */
+  --text:#1B1E29;      /* texto principal oscuro */
+  --muted:#6B7280;     /* texto secundario */
+  --brand:#E41E26;     /* rojo City */
+  --brand-2:#415A6B;   /* azul Lube (oscuro) */
+  --accent:#E41E26;    /* acento rojo para énfasis */
+  --ring:rgba(228,30,38,.25);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--text);background:var(--bg)}
+img{max-width:100%;height:auto;display:block;border-radius:18px}
+.container{width:min(1100px,92%);margin-inline:auto}
+a{color:var(--brand-2);text-decoration:none}
+a.link{color:var(--brand-2)}
+a.link:hover{text-decoration:underline}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.1rem;border-radius:12px;border:1px solid transparent;font-weight:600}
+.btn-primary{background:linear-gradient(135deg,var(--brand),#c51a21);color:white;box-shadow:0 10px 30px rgba(228,30,38,.18)}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-ghost{border-color:rgba(65,90,107,.25);background:transparent;color:var(--brand-2)}
+/* Header on dark blue to guarantee contrast */
+.site-header{position:sticky;top:0;background:var(--brand-2);color:white;border-bottom:1px solid rgba(255,255,255,.15);z-index:50}
+.site-header a{color:white}
+.header-wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.brand{display:flex;gap:.8rem;align-items:center}
+.logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--brand),#c51a21);display:grid;place-items:center;font-weight:800;color:#fff}
+.brand-text span{display:block;color:#e8edf2;font-size:.85rem}
+.nav{display:flex;gap:1rem;align-items:center}
+.nav a{padding:.6rem .8rem;border-radius:10px}
+.nav a:hover{background:rgba(255,255,255,.1)}
+/* Hero on light background */
+.hero{padding:64px 0;background:linear-gradient(180deg,#FFFFFF 0%, #F7F9FC 60%, #EFF3F6 100%)}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:2.2rem;align-items:center}
+.hero h1{font-size:clamp(1.8rem,3.5vw,3rem);line-height:1.1;margin:0 0 12px;color:#0d1b2a}
+.grad{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:#334155;font-size:1.05rem}
+.hero-ctas{display:flex;gap:.8rem;margin-top:14px;margin-bottom:10px;flex-wrap:wrap}
+.badges{display:flex;flex-wrap:wrap;gap:.6rem;margin:10px 0 0;padding:0;list-style:none;color:#1B1E29}
+.badges li{background:#ffffff;border:1px solid #e5e7eb;padding:.45rem .7rem;border-radius:999px;font-size:.9rem}
+/* Sections */
+.section{padding:64px 0}
+.section.alt{background:#F0F3F6}
+.section-title{font-size:1.6rem;margin:0 0 .4rem;color:#0f172a}
+.section-subtitle{color:var(--muted);margin:0 0 1.2rem}
+/* Cards readable on white */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:var(--card);border:1px solid #e5e7eb;padding:18px;border-radius:16px;box-shadow:0 8px 24px rgba(17,24,39,.06)}
+.card h3{margin:0 0 .35rem;color:#0f172a}
+.card p{color:#374151}
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+/* Info blocks */
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.list{margin:.4rem 0 0; padding-left:1.1rem; color:#374151}
+/* Form */
+.form{background:#ffffff;border:1px solid #e5e7eb;padding:22px;border-radius:16px;box-shadow:0 8px 24px rgba(17,24,39,.06)}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.field{display:flex;flex-direction:column;gap:.45rem}
+.field.full{grid-column:1 / -1}
+input, select, textarea{background:#ffffff;border:1px solid #d1d5db;border-radius:12px;padding:.9rem 1rem;color:#111827;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0 0 4px var(--ring)}
+.form-actions{display:flex;align-items:center;gap:1rem;margin-top:1rem}
+.form-note{color:#6b7280}
+.form-success{margin-top:12px;color:#065f46;font-weight:600}
+/* Footer on dark blue */
+.site-footer{border-top:1px solid rgba(255,255,255,.12);padding:32px 0;background:var(--brand-2);color:#ffffff}
+.site-footer a{color:#ffffff}
+.footer-grid{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start}
+@media (max-width: 920px){
+  .hero-grid{grid-template-columns:1fr}
+  .cards, .gallery, .info-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+}
