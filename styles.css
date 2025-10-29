@@ -1,0 +1,65 @@
+
+:root{
+  --bg:#0A0F22;
+  --bg-alt:#0D132B;
+  --card:#0f1736;
+  --text:#E6E8EE;
+  --muted:#9aa3b2;
+  --brand:#3B82F6;
+  --brand-2:#22D3EE;
+  --accent:#34D399;
+  --ring:rgba(59,130,246,.35);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--text);background:radial-gradient(1200px 600px at 15% -10%, rgba(34,211,238,.06), transparent 60%), radial-gradient(900px 500px at 85% 10%, rgba(59,130,246,.08), transparent 60%), var(--bg);}
+img{max-width:100%;height:auto;display:block;border-radius:18px}
+.container{width:min(1100px,92%);margin-inline:auto}
+a{color:var(--text);text-decoration:none}
+a.link{color:var(--brand)}
+a.link:hover{text-decoration:underline}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.1rem;border-radius:12px;border:1px solid transparent;font-weight:600}
+.btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:white;box-shadow:0 10px 30px rgba(59,130,246,.25)}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-ghost{border-color:#243057;background:transparent;color:var(--text)}
+.site-header{position:sticky;top:0;background:rgba(10,15,34,.78);backdrop-filter:blur(8px);border-bottom:1px solid #131b3a;z-index:50}
+.header-wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.brand{display:flex;gap:.8rem;align-items:center}
+.logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;font-weight:800}
+.brand-text span{display:block;color:var(--muted);font-size:.85rem}
+.nav{display:flex;gap:1rem;align-items:center}
+.nav a{padding:.6rem .8rem;border-radius:10px}
+.nav a:hover{background:#121a39}
+.hero{padding:64px 0}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:2.2rem;align-items:center}
+.hero h1{font-size:clamp(1.8rem,3.5vw,3rem);line-height:1.1;margin:0 0 12px}
+.grad{background:linear-gradient(135deg,var(--brand),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:#c9cfdd;font-size:1.05rem}
+.hero-ctas{display:flex;gap:.8rem;margin-top:14px;margin-bottom:10px;flex-wrap:wrap}
+.badges{display:flex;flex-wrap:wrap;gap:.6rem;margin:10px 0 0;padding:0;list-style:none;color:#c3cbe0}
+.badges li{background:#0c1431;border:1px solid #18235a;padding:.45rem .7rem;border-radius:999px;font-size:.9rem}
+.section{padding:64px 0}
+.section.alt{background:linear-gradient(180deg, rgba(15,23,54,.25), rgba(15,23,54,.08))}
+.section-title{font-size:1.6rem;margin:0 0 .4rem}
+.section-subtitle{color:var(--muted);margin:0 0 1.2rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:linear-gradient(180deg,#0d1433,#0b122c);border:1px solid #1a2559;padding:18px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.card h3{margin:0 0 .2rem}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.list{margin:.4rem 0 0; padding-left:1.1rem; color:#cbd2e3}
+.form{background:linear-gradient(180deg,#0d1433,#0b122c);border:1px solid #1a2559;padding:22px;border-radius:16px}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.field{display:flex;flex-direction:column;gap:.45rem}
+.field.full{grid-column:1 / -1}
+input, select, textarea{background:#0b1130;border:1px solid #1a2559;border-radius:12px;padding:.9rem 1rem;color:var(--text);outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0 0 4px var(--ring)}
+.form-actions{display:flex;align-items:center;gap:1rem;margin-top:1rem}
+.form-note{color:var(--muted)}
+.form-success{margin-top:12px;color:var(--accent);font-weight:600}
+.site-footer{border-top:1px solid #131b3a;padding:32px 0;background:rgba(10,15,34,.6)}
+.footer-grid{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start}
+@media (max-width: 920px){
+  .hero-grid{grid-template-columns:1fr}
+  .cards, .gallery, .info-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+}
