@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CL">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>CityLube — Serviteca en Peñaflor | Cambio de aceite, Alineación láser, Frenos</title>
-  <meta name="description" content="CityLube es tu serviteca en Peñaflor desde 2011: cambio de aceite, alineación láser, frenos, amortiguadores y mantención por kilometraje. Contáctanos por WhatsApp o correo." />
+  <meta name="description" content="CityLube es tu serviteca en Peñaflor desde 2011: cambio de aceite, alineación láser, frenos, amortiguadores y mantención por kilometraje. Agenda por WhatsApp o llámanos." />
   <meta name="theme-color" content="#415A6B" />
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://www.citylube.cl/" />
   <link rel="alternate" href="https://www.citylube.cl/" hreflang="es-cl" />
 
+  <!-- Performance hints -->
+  <link rel="preload" as="image" href="/assets/citylube_hero.jpg" imagesrcset="/assets/citylube_hero.jpg 1200w" imagesizes="100vw">
+  <link rel="icon" href="/assets/favicon_citylube.png" type="image/png" />
+  <link rel="stylesheet" href="/styles.css" />
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CL" />
   <meta property="og:title" content="CityLube — Serviteca en Peñaflor" />
-  <meta property="og:description" content="Mecánica rápida en Peñaflor: cambio de aceite, alineación láser, frenos y más. Contáctanos por WhatsApp o correo." />
+  <meta property="og:description" content="Mecánica rápida en Peñaflor: cambio de aceite, alineación láser, frenos y más. Escríbenos por WhatsApp o llámanos." />
   <meta property="og:url" content="https://www.citylube.cl/" />
   <meta property="og:image" content="https://www.citylube.cl/assets/citylube_hero.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="CityLube" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="CityLube — Serviteca en Peñaflor" />
-  <meta name="twitter:description" content="Tecnología y confianza para el cuidado de tu auto en Peñaflor." />
+  <meta name="twitter:description" content="Tecnología y confianza para el cuidado de tu auto en Peñaflor. Atención rápida y diagnóstico claro." />
   <meta name="twitter:image" content="https://www.citylube.cl/assets/citylube_hero.jpg" />
-
-  <link rel="icon" href="/assets/favicon_citylube.png" type="image/png" />
-  <link rel="stylesheet" href="/styles.css" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3TZXHKW9EW"></script>
@@ -33,94 +39,190 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-3TZXHKW9EW');
+
+    // Baseline config
+    gtag('config', 'G-3TZXHKW9EW', {
+      anonymize_ip: true
+    });
   </script>
 
   <!-- JSON-LD Local Business -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AutoRepair",
+    "@type": ["AutoRepair","LocalBusiness"],
     "name": "CityLube",
-    "image": "https://www.citylube.cl/assets/citylube_hero.jpg",
+    "image": [
+      "https://www.citylube.cl/assets/citylube_hero.jpg"
+    ],
     "url": "https://www.citylube.cl/",
-    "telephone": "+56966499091",
+    "telephone": "+56 9 6649 9091",
     "email": "salgadovaras.carlos@gmail.com",
+    "description": "Serviteca en Peñaflor desde 2011. Cambio de aceite, alineación láser, frenos, amortiguadores y mantención por kilometraje.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Francisco Bilbao 75",
       "addressLocality": "Peñaflor",
-      "addressRegion": "RM",
+      "addressRegion": "Región Metropolitana",
       "postalCode": "9750178",
       "addressCountry": "CL"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -33.611,
+      "longitude": -70.876
+    },
     "openingHoursSpecification": [
-      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:30"},
-      {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}
+      {
+        "@type":"OpeningHoursSpecification",
+        "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens":"09:00",
+        "closes":"18:30"
+      },
+      {
+        "@type":"OpeningHoursSpecification",
+        "dayOfWeek":"Saturday",
+        "opens":"09:00",
+        "closes":"14:00"
+      }
     ],
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Peñaflor, Región Metropolitana"
+    },
     "sameAs": [
-      "https://www.instagram.com/carlossalgadovaras/",
       "https://web.facebook.com/citylube/?locale=es_LA&_rdc=1&_rdr",
-      "https://wa.me/56966499091"
+      "https://wa.me/56966499091",
+      "https://www.instagram.com/carlossalgadovaras/"
     ],
     "priceRange": "$$"
   }
   </script>
+
+  <style>
+    /* Accesibilidad: foco visible si tu CSS no lo trae */
+    :focus-visible { outline: 3px solid rgba(65,90,107,.65); outline-offset: 3px; }
+    .skip-link{
+      position:absolute; left:-999px; top:8px; background:#fff; color:#000;
+      padding:10px 12px; border-radius:8px; z-index:9999;
+    }
+    .skip-link:focus{ left:12px; }
+  </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
   <!-- HEADER -->
   <header class="site-header">
     <div class="container header-wrap">
       <a href="/" class="brand" aria-label="Ir al inicio">
         <img src="/assets/logo_city-lube.png" alt="CityLube" width="150" height="43" decoding="async" fetchpriority="high" />
       </a>
+
       <nav class="nav" aria-label="Navegación principal">
         <a href="#servicios">Servicios</a>
         <a href="#fotos">Fotos</a>
+        <a href="#ubicacion">Ubicación</a>
         <a href="#contacto" class="btn btn-primary">Contacto</a>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" aria-label="Presentación">
     <div class="container hero-grid">
       <div class="hero-copy">
         <h1>Serviteca en <strong>Peñaflor</strong> — <span class="grad">rápido, claro y sin cuentos</span></h1>
+
         <p class="lead">
-          Desde 2011 cuidamos vehículos de todas las marcas en <strong>Peñaflor</strong>:
+          Desde <strong>2011</strong> cuidamos vehículos de todas las marcas:
           <strong>cambio de aceite</strong>, <strong>alineación láser</strong>,
           <strong>frenos</strong>, <strong>amortiguadores</strong> y
           <strong>mantención por kilometraje</strong>.
         </p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="https://wa.me/56966499091" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
-          <a class="btn btn-ghost" href="mailto:Salgadovaras.carlos@gmail.com">Enviar correo</a>
+
+        <div class="hero-ctas" role="group" aria-label="Acciones principales">
+          <a
+            class="btn btn-primary js-whatsapp"
+            href="https://wa.me/56966499091?text=Hola%20CityLube%2C%20quiero%20cotizar%20%2F%20agendar%20servicio%20para%20mi%20auto."
+            target="_blank"
+            rel="noopener"
+            aria-label="Abrir WhatsApp para cotizar o agendar"
+          >Escríbenos por WhatsApp</a>
+
+          <a
+            class="btn btn-ghost js-call"
+            href="tel:+56966499091"
+            aria-label="Llamar a CityLube"
+          >Llamar ahora</a>
+
+          <a class="btn btn-ghost js-email" href="mailto:salgadovaras.carlos@gmail.com?subject=Consulta%20CityLube%20-%20Servicio%20Automotriz" aria-label="Enviar correo a CityLube">
+            Enviar correo
+          </a>
         </div>
+
         <ul class="badges">
-          <li><strong>Diagnóstico claro</strong></li>
+          <li><strong>Diagnóstico claro</strong> (sin vueltas)</li>
           <li><strong>Equipamiento moderno</strong></li>
-          <li><strong>Atención:</strong> L–V 09:00–18:30 • Sáb 09:00–14:00</li>
+          <li><strong>Horario:</strong> L–V 09:00–18:30 • Sáb 09:00–14:00</li>
         </ul>
+
+        <p style="margin-top:10px;opacity:.9">
+          <small>Tip: si vienes por <strong>alineación</strong> o <strong>frenos</strong>, tráenos la patente o modelo y año para atenderte más rápido.</small>
+        </p>
       </div>
     </div>
   </section>
 
-  <main>
+  <main id="contenido">
     <!-- SERVICIOS -->
     <section id="servicios" class="section">
       <div class="container">
         <h2 class="section-title">Servicios principales</h2>
-        <p class="section-subtitle">Todo lo que necesita tu auto, en un solo lugar.</p>
+        <p class="section-subtitle">Lo esencial para tu auto, resuelto en un solo lugar.</p>
+
         <div class="cards">
-          <article class="card"><h3>Cambio de aceite y filtros</h3><p>Aceites y estándares según fabricante. Revisión de niveles.</p></article>
-          <article class="card"><h3>Alineación láser</h3><p>Dirección precisa, menor desgaste y conducción más segura.</p></article>
-          <article class="card"><h3>Frenos y seguridad</h3><p>Pastillas, discos, fluidos y revisión completa del sistema.</p></article>
-          <article class="card"><h3>Suspensión y amortiguadores</h3><p>Estabilidad y confort. Cambios y calibraciones con garantía.</p></article>
-          <article class="card"><h3>Mantención por kilometraje</h3><p>Plan a medida 10K / 20K / 40K+ siguiendo el manual de tu marca.</p></article>
-          <article class="card"><h3>Mecánica rápida y afinamiento</h3><p>Soluciones sin vueltas para tenerte de vuelta en la ruta.</p></article>
+          <article class="card">
+            <h3>Cambio de aceite y filtros</h3>
+            <p>Aceites y especificaciones según fabricante. Revisión de niveles y chequeo visual.</p>
+            <p><a class="link js-whatsapp" href="https://wa.me/56966499091?text=Hola%20CityLube%2C%20quiero%20cotizar%20cambio%20de%20aceite%20y%20filtros.%20Mi%20auto%20es%3A%20%5Bmarca%2Fmodelo%2Fa%C3%B1o%5D." target="_blank" rel="noopener">Cotizar por WhatsApp</a></p>
+          </article>
+
+          <article class="card">
+            <h3>Alineación láser</h3>
+            <p>Dirección precisa, menor desgaste de neumáticos y conducción más segura.</p>
+            <p><a class="link js-whatsapp" href="https://wa.me/56966499091?text=Hola%20CityLube%2C%20quiero%20agendar%20alineaci%C3%B3n%20l%C3%A1ser.%20Mi%20auto%20es%3A%20%5Bmarca%2Fmodelo%2Fa%C3%B1o%5D." target="_blank" rel="noopener">Agendar por WhatsApp</a></p>
+          </article>
+
+          <article class="card">
+            <h3>Frenos y seguridad</h3>
+            <p>Pastillas, discos, fluidos y revisión completa del sistema de frenado.</p>
+            <p><a class="link js-whatsapp" href="https://wa.me/56966499091?text=Hola%20CityLube%2C%20necesito%20revisi%C3%B3n%20de%20frenos.%20S%C3%ADntomas%3A%20%5Bruido%2Fvibraci%C3%B3n%2Fpedal%5D.%20Auto%3A%20%5Bmarca%2Fmodelo%2Fa%C3%B1o%5D." target="_blank" rel="noopener">Pedir revisión</a></p>
+          </article>
+
+          <article class="card">
+            <h3>Suspensión y amortiguadores</h3>
+            <p>Mejor estabilidad y confort. Cambios y calibración con trabajo prolijo.</p>
+            <p><a class="link js-whatsapp" href="https://wa.me/56966499091?text=Hola%20CityLube%2C%20quiero%20revisar%20suspensi%C3%B3n%20o%20amortiguadores.%20Auto%3A%20%5Bmarca%2Fmodelo%2Fa%C3%B1o%5D.%20Detalle%3A%20%5Bgolpes%2Fruidos%2Frebote%5D." target="_blank" rel="noopener">Consultar</a></p>
+          </article>
+
+          <article class="card">
+            <h3>Mantención por kilometraje</h3>
+            <p>Plan 10K / 20K / 40K+ siguiendo manual y necesidades reales del vehículo.</p>
+            <p><a class="link js-whatsapp" href="https://wa.me/56966499091?text=Hola%20CityLube%2C%20quiero%20mantenci%C3%B3n%20por%20kilometraje.%20Kilometraje%3A%20%5B%5D.%20Auto%3A%20%5Bmarca%2Fmodelo%2Fa%C3%B1o%5D." target="_blank" rel="noopener">Cotizar mantención</a></p>
+          </article>
+
+          <article class="card">
+            <h3>Mecánica rápida y afinamiento</h3>
+            <p>Soluciones sin vueltas para dejar tu auto operativo y seguro.</p>
+            <p><a class="link js-call" href="tel:+56966499091">Llamar y consultar</a></p>
+          </article>
         </div>
+
+        <p style="margin-top:14px;opacity:.85">
+          <small>Nota: para una atención más rápida, trae tu <strong>patente</strong> o indícanos <strong>marca/modelo/año</strong> por WhatsApp.</small>
+        </p>
       </div>
     </section>
 
@@ -129,13 +231,59 @@
       <div class="container">
         <h2 class="section-title">Nuestro taller</h2>
         <p class="section-subtitle">
-          Moderno, limpio y equipado con tecnología de diagnóstico y alineación de última generación.
-          En CityLube cuidamos cada detalle para que tu vehículo salga seguro, rápido y como nuevo.
+          Taller limpio, ordenado y equipado para diagnóstico y alineación.
+          Trabajamos rápido, pero con estándares.
         </p>
+
         <div class="gallery">
-          <figure><img src="/assets/citylube-foto-1.jpg" width="1200" height="800" alt="CityLube Peñaflor — recepción y diagnóstico automotriz" loading="lazy" /><figcaption>Recepción y diagnóstico</figcaption></figure>
-          <figure><img src="/assets/citylube-foto-2.jpg" width="1200" height="800" alt="CityLube Peñaflor — elevadores y alineación láser" loading="lazy" /><figcaption>Elevadores y alineación láser</figcaption></figure>
-          <figure><img src="/assets/citylube_hero.jpg" width="1200" height="800" alt="CityLube Peñaflor — equipo y herramientas" loading="lazy" /><figcaption>Equipo y herramientas</figcaption></figure>
+          <figure>
+            <img src="/assets/citylube-foto-1.jpg" width="1200" height="800" alt="CityLube Peñaflor — recepción y diagnóstico automotriz" loading="lazy" decoding="async" />
+            <figcaption>Recepción y diagnóstico</figcaption>
+          </figure>
+
+          <figure>
+            <img src="/assets/citylube-foto-2.jpg" width="1200" height="800" alt="CityLube Peñaflor — elevadores y alineación láser" loading="lazy" decoding="async" />
+            <figcaption>Elevadores y alineación láser</figcaption>
+          </figure>
+
+          <figure>
+            <img src="/assets/citylube_hero.jpg" width="1200" height="800" alt="CityLube Peñaflor — equipo y herramientas" loading="lazy" decoding="async" />
+            <figcaption>Equipo y herramientas</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section id="ubicacion" class="section">
+      <div class="container">
+        <h2 class="section-title">Ubicación</h2>
+        <p class="section-subtitle">
+          Estamos en <strong>Francisco Bilbao 75, Peñaflor</strong>. Llega fácil y rápido.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Cómo llegar</h3>
+            <p>Abre Google Maps y navega directo al taller.</p>
+            <p>
+              <a class="btn btn-primary js-maps" href="https://maps.google.com/?q=Francisco+Bilbao+75+Pe%C3%B1aflor" target="_blank" rel="noopener">
+                Abrir en Google Maps
+              </a>
+            </p>
+            <p><small>Si vienes desde Santiago, considera tráfico en horarios punta.</small></p>
+          </article>
+
+          <article class="card">
+            <h3>Atención rápida</h3>
+            <p>
+              Para consultas rápidas, WhatsApp y llamada funcionan mejor que correo.
+            </p>
+            <p>
+              <a class="btn btn-ghost js-call" href="tel:+56966499091">Llamar</a>
+              <a class="btn btn-ghost js-whatsapp" href="https://wa.me/56966499091" target="_blank" rel="noopener">WhatsApp</a>
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -144,22 +292,40 @@
     <section id="contacto" class="section alt">
       <div class="container">
         <h2 class="section-title">Contacto y horarios</h2>
-        <p class="section-subtitle">Estamos disponibles para atenderte en el siguiente horario:</p>
+        <p class="section-subtitle">Sin formularios, sin esperas: te respondemos por WhatsApp o teléfono.</p>
+
         <div class="cards">
           <article class="card">
             <h3>Horario de atención</h3>
-            <p><strong>Lunes a Viernes:</strong> 09:00 a 18:30<br><strong>Sábado:</strong> 09:00 a 14:00<br><strong>Domingo:</strong> Cerrado</p>
-            <p>Visítanos en <strong>Francisco Bilbao 75, Peñaflor</strong>.</p>
+            <p>
+              <strong>Lunes a Viernes:</strong> 09:00 a 18:30<br>
+              <strong>Sábado:</strong> 09:00 a 14:00<br>
+              <strong>Domingo:</strong> Cerrado
+            </p>
+            <p>Dirección: <strong>Francisco Bilbao 75, Peñaflor</strong>.</p>
+            <p><a class="link js-maps" href="https://maps.google.com/?q=Francisco+Bilbao+75+Pe%C3%B1aflor" target="_blank" rel="noopener">Ver en Maps</a></p>
           </article>
+
           <article class="card">
             <h3>WhatsApp</h3>
-            <p>Respuesta rápida. Escríbenos o envíanos tu consulta.</p>
-            <p><a class="btn btn-primary" href="https://wa.me/56966499091" target="_blank" rel="noopener">Abrir WhatsApp</a></p>
+            <p>Respuesta rápida para cotizar o agendar.</p>
+            <p>
+              <a class="btn btn-primary js-whatsapp" href="https://wa.me/56966499091?text=Hola%20CityLube%2C%20quiero%20cotizar%20%2F%20agendar.%20Mi%20auto%20es%3A%20%5Bmarca%2Fmodelo%2Fa%C3%B1o%5D." target="_blank" rel="noopener">
+                Abrir WhatsApp
+              </a>
+            </p>
           </article>
+
           <article class="card">
-            <h3>Correo electrónico</h3>
-            <p>Describe el servicio que necesitas y te responderemos pronto.</p>
-            <p><a class="btn btn-ghost" href="mailto:salgadovaras.carlos@gmail.com">Enviar correo</a></p>
+            <h3>Teléfono</h3>
+            <p>Si es urgente, llama y lo vemos al tiro.</p>
+            <p><a class="btn btn-ghost js-call" href="tel:+56966499091">+56 9 6649 9091</a></p>
+          </article>
+
+          <article class="card">
+            <h3>Correo</h3>
+            <p>Para consultas no urgentes.</p>
+            <p><a class="btn btn-ghost js-email" href="mailto:salgadovaras.carlos@gmail.com?subject=Consulta%20CityLube%20-%20Servicio%20Automotriz">Enviar correo</a></p>
           </article>
         </div>
       </div>
@@ -173,20 +339,26 @@
         <img src="/assets/logo_city-lube.png" alt="CityLube" width="150" height="43" decoding="async" style="margin-bottom:8px;" /><br/>
         <strong>CityLube</strong><br/>Serviteca — Peñaflor<br/>
         <small>© 2011–2025 Todos los derechos reservados.</small><br/><br/>
+
         <address style="font-style:normal;">
           Francisco Bilbao 75, Peñaflor, RM, Chile ·
-          <a href="tel:+56966499091">+56 9 6649 9091</a> ·
-          <a class="link" href="mailto:salgadovaras.carlos@gmail.com">salgadovaras.carlos@gmail.com</a> ·
-          <a class="link" href="https://maps.google.com/?q=Francisco+Bilbao+75+Pe%C3%B1aflor" target="_blank" rel="noopener">Cómo llegar</a>
+          <a class="js-call" href="tel:+56966499091">+56 9 6649 9091</a> ·
+          <a class="link js-email" href="mailto:salgadovaras.carlos@gmail.com">salgadovaras.carlos@gmail.com</a> ·
+          <a class="link js-maps" href="https://maps.google.com/?q=Francisco+Bilbao+75+Pe%C3%B1aflor" target="_blank" rel="noopener">Cómo llegar</a>
         </address>
+
         <p><strong>Horario:</strong> L–V 09:00–18:30 · Sáb 09:00–14:00</p>
       </div>
+
       <div>
-        <a class="link" href="https://wa.me/56966499091" target="_blank" rel="noopener">WhatsApp</a><br/>
-        <a class="link" href="mailto:salgadovaras.carlos@gmail.com">Correo</a><br/><br/>
+        <a class="link js-whatsapp" href="https://wa.me/56966499091" target="_blank" rel="noopener">WhatsApp</a><br/>
+        <a class="link js-call" href="tel:+56966499091">Llamar</a><br/>
+        <a class="link js-email" href="mailto:salgadovaras.carlos@gmail.com">Correo</a><br/><br/>
+
         <a class="link" href="https://www.instagram.com/carlossalgadovaras/" target="_blank" rel="noopener">
           <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="" width="22" height="22" style="vertical-align:middle;filter:invert(1);margin-right:4px;"> Instagram
         </a><br/>
+
         <a class="link" href="https://web.facebook.com/citylube/?locale=es_LA&_rdc=1&_rdr" target="_blank" rel="noopener">
           <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="" width="22" height="22" style="vertical-align:middle;filter:invert(1);margin-right:4px;"> Facebook
         </a>
@@ -194,14 +366,39 @@
     </div>
 
     <!-- Créditos Tronx Strategy -->
-<div class="container" style="text-align:center;margin-top:32px;font-size:0.85rem;color:#cbd5e1;">
-  <p style="opacity:0.75;font-size:0.8rem;">
-    Desarrollado por 
-    <a href="https://tronxstrategy.com" target="_blank" rel="noopener" style="color:#fff;">
-      Tronx Strategy
-    </a>
-  </p>
-</div>
+    <div class="container" style="text-align:center;margin-top:32px;font-size:0.85rem;color:#cbd5e1;">
+      <p style="opacity:0.75;font-size:0.8rem;">
+        Desarrollado por
+        <a href="https://tronxstrategy.com" target="_blank" rel="noopener" style="color:#fff;">Tronx Strategy</a>
+      </p>
+    </div>
   </footer>
+
+  <!-- Tracking: clicks sin formulario (WhatsApp / Call / Maps / Email) -->
+  <script>
+    (function () {
+      function track(eventName, params) {
+        try {
+          if (typeof gtag === 'function') gtag('event', eventName, params || {});
+        } catch (e) {}
+      }
+
+      function bind(selector, eventName, extra) {
+        document.querySelectorAll(selector).forEach(function (el) {
+          el.addEventListener('click', function () {
+            track(eventName, Object.assign({
+              link_url: el.getAttribute('href') || '',
+              link_text: (el.textContent || '').trim().slice(0, 80)
+            }, extra || {}));
+          });
+        });
+      }
+
+      bind('.js-whatsapp', 'click_whatsapp', { channel: 'whatsapp' });
+      bind('.js-call', 'click_call', { channel: 'phone' });
+      bind('.js-maps', 'click_maps', { channel: 'maps' });
+      bind('.js-email', 'click_email', { channel: 'email' });
+    })();
+  </script>
 </body>
 </html>
