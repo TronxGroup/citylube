@@ -2,13 +2,20 @@
   /* CityLube brand */
   --bg:#F7F9FC;        /* blanco suave principal */
   --bg-alt:#ffffff;    /* secciones alternas */
-  --card:#FFFFFF;      /* tarjetas claras para máxima legibilidad */
-  --text:#1B1E29;      /* texto principal oscuro */
+  --card:#FFFFFF;      /* tarjetas */
+  --text:#1B1E29;      /* texto principal */
   --muted:#6B7280;     /* texto secundario */
   --brand:#E41E26;     /* rojo City */
-  --brand-2:#415A6B;   /* azul Lube (oscuro) */
-  --accent:#E41E26;    /* acento rojo para énfasis */
+  --brand-2:#415A6B;   /* azul Lube */
+  --accent:#E41E26;    /* acento */
   --ring:rgba(228,30,38,.25);
+
+  /* UX / layout */
+  --radius:16px;
+  --radius-sm:12px;
+  --shadow:0 10px 30px rgba(17,24,39,.08);
+  --shadow-soft:0 8px 24px rgba(17,24,39,.06);
+  --border:#e5e7eb;
 }
 
 /* --- GLOBALS --- */
@@ -19,6 +26,9 @@ html,body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,"Apple Color Emoji","Segoe UI Emoji";
   color:var(--text);
   background:var(--bg);
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 img{max-width:100%;height:auto;display:block;border-radius:18px}
 .container{width:min(1100px,92%);margin-inline:auto}
@@ -26,16 +36,35 @@ a{color:var(--brand-2);text-decoration:none}
 a.link{color:var(--brand-2)}
 a.link:hover{text-decoration:underline}
 
+/* Accesibilidad: foco visible */
+:focus-visible{
+  outline:3px solid rgba(228,30,38,.55);
+  outline-offset:3px;
+}
+
+/* Skip link si lo usas en HTML */
+.skip-link{
+  position:absolute; left:-999px; top:8px;
+  background:#fff; color:#000;
+  padding:10px 12px; border-radius:10px;
+  z-index:9999;
+}
+.skip-link:focus{left:12px}
+
 /* --- BUTTONS --- */
 .btn{
   display:inline-flex;
   align-items:center;
+  justify-content:center;
   gap:.5rem;
   padding:.9rem 1.1rem;
-  border-radius:12px;
+  border-radius:var(--radius-sm);
   border:1px solid transparent;
-  font-weight:600;
-  transition:all .15s ease;
+  font-weight:700;
+  letter-spacing:.01em;
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
+  user-select:none;
+  -webkit-tap-highlight-color:transparent;
 }
 .btn-primary{
   background:linear-gradient(135deg,var(--brand),#c51a21);
@@ -43,6 +72,7 @@ a.link:hover{text-decoration:underline}
   box-shadow:0 10px 30px rgba(228,30,38,.18);
 }
 .btn-primary:hover{transform:translateY(-1px)}
+.btn-primary:active{transform:translateY(0px); box-shadow:0 6px 18px rgba(228,30,38,.18)}
 .btn-ghost{
   border-color:rgba(65,90,107,.25);
   background:transparent;
@@ -72,42 +102,50 @@ a.link:hover{text-decoration:underline}
   display:grid;place-items:center;font-weight:800;color:#fff
 }
 .brand-text span{display:block;color:#e8edf2;font-size:.85rem}
-.nav{display:flex;gap:1rem;align-items:center}
-.nav a{padding:.6rem .8rem;border-radius:10px}
+.nav{display:flex;gap:.4rem;align-items:center}
+.nav a{padding:.6rem .75rem;border-radius:10px}
 .nav a:hover{background:rgba(255,255,255,.1)}
+/* Botón “Contacto” en el header (si tiene clase btn) */
+.nav .btn{padding:.65rem .9rem}
 
 /* --- HERO SECTION --- */
-.hero {
-  position: relative;
-  background: url("/assets/citylube-foto-3.jpg") center center / cover no-repeat;
-  color: #1B1E29;
-  padding: 80px 0;
+.hero{
+  position:relative;
+  background:url("/assets/citylube-foto-3.jpg") center center / cover no-repeat;
+  color:#0d1b2a;
+  padding:80px 0;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,0.62);
+  backdrop-filter:brightness(1.05) blur(1px);
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.6); /* capa blanca semitransparente */
-  backdrop-filter: brightness(1.1) blur(1px);
+/* contenedor por encima */
+.hero .container{
+  position:relative;
+  z-index:2;
+  background:rgba(255,255,255,0.78);
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:var(--radius);
+  padding:2rem 2.5rem;
+  box-shadow:0 12px 35px rgba(0,0,0,0.08);
 }
 
-/* contenedor y texto por encima */
-.hero .container {
-  position: relative;
-  z-index: 2;
-  background: rgba(255,255,255,0.75);
-  border-radius: 16px;
-  padding: 2rem 2.5rem;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:2.2rem;
+  align-items:center
 }
-
-.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:2.2rem;align-items:center}
 .hero h1{
-  font-size:clamp(1.8rem,3.5vw,3rem);
-  line-height:1.1;
+  font-size:clamp(1.85rem,3.5vw,3rem);
+  line-height:1.08;
   margin:0 0 12px;
   color:#0d1b2a;
+  letter-spacing:-.02em;
 }
 .grad{
   background:linear-gradient(135deg,var(--brand),var(--brand-2));
@@ -115,8 +153,19 @@ a.link:hover{text-decoration:underline}
   background-clip:text;
   color:transparent;
 }
-.lead{color:#1f2937;font-size:1.05rem}
-.hero-ctas{display:flex;gap:.8rem;margin-top:14px;margin-bottom:10px;flex-wrap:wrap}
+.lead{
+  color:#1f2937;
+  font-size:1.05rem;
+  line-height:1.55;
+  margin:0;
+}
+.hero-ctas{
+  display:flex;
+  gap:.8rem;
+  margin-top:14px;
+  margin-bottom:10px;
+  flex-wrap:wrap
+}
 .badges{
   display:flex;
   flex-wrap:wrap;
@@ -124,61 +173,102 @@ a.link:hover{text-decoration:underline}
   margin:10px 0 0;
   padding:0;
   list-style:none;
-  color:#1B1E29;
+  color:#111827;
 }
 .badges li{
-  background:rgba(255,255,255,0.8);
-  border:1px solid rgba(0,0,0,0.05);
+  background:rgba(255,255,255,0.85);
+  border:1px solid rgba(0,0,0,0.06);
   padding:.45rem .7rem;
   border-radius:999px;
-  font-size:.9rem;
+  font-size:.92rem;
 }
 
-/* WhatsApp y botones dentro del hero */
+/* Botones dentro del hero: más “táctiles” */
 .hero .btn-ghost{
-  background:rgba(255,255,255,0.85);
+  background:rgba(255,255,255,0.9);
   border:1px solid rgba(65,90,107,0.25);
-  color:#415A6B;
-  font-weight:600;
+  color:var(--brand-2);
+  font-weight:800;
 }
 .hero .btn-ghost:hover{
-  background:white;
-  border-color:#E41E26;
-  color:#E41E26;
+  background:#fff;
+  border-color:rgba(228,30,38,.45);
+  color:var(--brand);
 }
 
 /* --- SECTIONS --- */
 .section{padding:64px 0}
 .section.alt{background:#F0F3F6}
-.section-title{font-size:1.6rem;margin:0 0 .4rem;color:#0f172a}
-.section-subtitle{color:var(--muted);margin:0 0 1.2rem}
+.section-title{
+  font-size:1.65rem;
+  margin:0 0 .4rem;
+  color:#0f172a;
+  letter-spacing:-.01em;
+}
+.section-subtitle{
+  color:var(--muted);
+  margin:0 0 1.2rem;
+  line-height:1.55;
+}
 
 /* --- CARDS --- */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem
+}
 .card{
   background:var(--card);
-  border:1px solid #e5e7eb;
+  border:1px solid var(--border);
   padding:18px;
-  border-radius:16px;
-  box-shadow:0 8px 24px rgba(17,24,39,.06);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-soft);
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 40px rgba(17,24,39,.09);
+  border-color:rgba(65,90,107,.22);
 }
 .card h3{margin:0 0 .35rem;color:#0f172a}
-.card p{color:#374151}
+.card p{color:#374151; line-height:1.55; margin:.45rem 0 0}
+.card .link{font-weight:700}
 
 /* --- GALLERY --- */
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem;
+  margin-top:1rem
+}
+.gallery figure{
+  margin:0;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow-soft);
+}
+.gallery img{
+  border-radius:0;
+}
+.gallery figcaption{
+  padding:10px 12px;
+  color:#334155;
+  font-size:.92rem;
+}
 
 /* --- INFO GRID --- */
 .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.list{margin:.4rem 0 0; padding-left:1.1rem; color:#374151}
+.list{margin:.4rem 0 0; padding-left:1.1rem; color:#374151; line-height:1.55}
 
-/* --- FORM --- */
+/* --- FORM (no lo usas, pero lo dejo impecable por si existe en CSS) --- */
 .form{
   background:#ffffff;
-  border:1px solid #e5e7eb;
+  border:1px solid var(--border);
   padding:22px;
-  border-radius:16px;
-  box-shadow:0 8px 24px rgba(17,24,39,.06);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-soft);
 }
 .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
 .field{display:flex;flex-direction:column;gap:.45rem}
@@ -186,10 +276,11 @@ a.link:hover{text-decoration:underline}
 input, select, textarea{
   background:#ffffff;
   border:1px solid #d1d5db;
-  border-radius:12px;
+  border-radius:var(--radius-sm);
   padding:.9rem 1rem;
   color:#111827;
   outline:none;
+  transition:border-color .15s ease, box-shadow .15s ease;
 }
 input:focus,select:focus,textarea:focus{
   border-color:var(--brand);
@@ -197,7 +288,7 @@ input:focus,select:focus,textarea:focus{
 }
 .form-actions{display:flex;align-items:center;gap:1rem;margin-top:1rem}
 .form-note{color:#6b7280}
-.form-success{margin-top:12px;color:#065f46;font-weight:600}
+.form-success{margin-top:12px;color:#065f46;font-weight:700}
 
 /* --- FOOTER --- */
 .site-footer{
@@ -207,13 +298,52 @@ input:focus,select:focus,textarea:focus{
   color:#ffffff;
 }
 .site-footer a{color:#ffffff}
-.footer-grid{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:1rem;
+  align-items:start
+}
+
+/* --- MOBILE: barra fija CTA (sin formulario) --- */
+.mobile-cta{
+  position:fixed;
+  left:12px;
+  right:12px;
+  bottom:12px;
+  z-index:60;
+  display:none; /* se activa en mobile */
+  gap:10px;
+}
+.mobile-cta a{
+  flex:1;
+  border-radius:14px;
+  padding:.95rem 1rem;
+  font-weight:900;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(17,24,39,.18);
+}
+.mobile-cta .wa{
+  background:linear-gradient(135deg,var(--brand),#c51a21);
+  color:#fff;
+}
+.mobile-cta .call{
+  background:#fff;
+  color:var(--brand-2);
+  border:1px solid rgba(65,90,107,.25);
+}
+
+/* Para que el footer no quede tapado por la barra */
+.has-mobile-cta body{padding-bottom:90px}
 
 /* --- RESPONSIVE --- */
 @media (max-width: 920px){
   .hero-grid{grid-template-columns:1fr}
   .cards, .gallery, .info-grid{grid-template-columns:1fr}
   .form-grid{grid-template-columns:1fr}
-  .hero .container{padding:1.5rem}
-  .hero{padding:60px 0}
+  .hero .container{padding:1.35rem}
+  .hero{padding:56px 0}
+
+  /* activa barra CTA */
+  .mobile-cta{display:flex}
 }
